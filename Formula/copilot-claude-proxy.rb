@@ -5,23 +5,23 @@
 class CopilotClaudeProxy < Formula
   desc "Expose GitHub Copilot as an Anthropic-compatible API for Claude Code"
   homepage "https://github.com/fabriziosestito/copilot-claude-proxy"
-  version "0.1.0"
+  version "0.2.0"
   license "GPL-3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fabriziosestito/copilot-claude-proxy/releases/download/v0.1.0/copilot-claude-proxy_darwin_amd64.tar.gz"
-      sha256 "7819e7710f2c93c48a0a63b703b4b73b00af329c430ebd0cd1cc0101150b60b7"
+      url "https://github.com/fabriziosestito/copilot-claude-proxy/releases/download/v0.2.0/copilot-claude-proxy_darwin_amd64.tar.gz"
+      sha256 "8f78cefb3a098c3d47545cbb4b5e48685f4ef49d5407441f64922c28d02fc039"
 
-      def install
+      define_method(:install) do
         bin.install "copilot-claude-proxy"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fabriziosestito/copilot-claude-proxy/releases/download/v0.1.0/copilot-claude-proxy_darwin_arm64.tar.gz"
-      sha256 "458c195124197a4248b619b244914ffe7e43fa5acf2635db550a63ff82dc48a2"
+      url "https://github.com/fabriziosestito/copilot-claude-proxy/releases/download/v0.2.0/copilot-claude-proxy_darwin_arm64.tar.gz"
+      sha256 "17c57366d0d7da311b4e5f5760361781c94313a2e3b867254f5b126f80826aa5"
 
-      def install
+      define_method(:install) do
         bin.install "copilot-claude-proxy"
       end
     end
@@ -29,18 +29,16 @@ class CopilotClaudeProxy < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fabriziosestito/copilot-claude-proxy/releases/download/v0.1.0/copilot-claude-proxy_linux_amd64.tar.gz"
-      sha256 "7ddcaa504857be776c942f13ae4064a40c9d861045e0b171c01918a7dabbad49"
-
-      def install
+      url "https://github.com/fabriziosestito/copilot-claude-proxy/releases/download/v0.2.0/copilot-claude-proxy_linux_amd64.tar.gz"
+      sha256 "0aa61db8846d89750f6b3f6f981a9630c8c91a0abaa2208852fd791aa7f769b3"
+      define_method(:install) do
         bin.install "copilot-claude-proxy"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fabriziosestito/copilot-claude-proxy/releases/download/v0.1.0/copilot-claude-proxy_linux_arm64.tar.gz"
-      sha256 "7e9bf25ae1b25d8d91ad9cb1f96c45965f97eff8f1b6f361ef2ba180e1b8b83c"
-
-      def install
+      url "https://github.com/fabriziosestito/copilot-claude-proxy/releases/download/v0.2.0/copilot-claude-proxy_linux_arm64.tar.gz"
+      sha256 "a2c922acc559e5621637fb0eb261178d839a7cb14196f87f2c1702e2a01abf25"
+      define_method(:install) do
         bin.install "copilot-claude-proxy"
       end
     end
